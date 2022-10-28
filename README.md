@@ -18,14 +18,12 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 If this work is helpful to you, please cite it as:
 ~~~~
 @misc{https://doi.org/10.48550/arxiv.2209.02190,
+  title = {A Multitask Deep Learning Model for Parsing Bridge Elements and Segmenting Defect in Bridge Inspection Images},
+  author = {Zhang, Chenyu and Karim, Muhammad Monjurul and Qin, Ruwen},
   doi = {10.48550/ARXIV.2209.02190},
   url = {https://arxiv.org/abs/2209.02190},
-  author = {Zhang, Chenyu and Karim, Muhammad Monjurul and Qin, Ruwen},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {A Multitask Deep Learning Model for Parsing Bridge Elements and Segmenting Defect in Bridge Inspection Images},
   publisher = {arXiv}, 
   year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
 }
 ~~~~
 Note that part of the codes are referred from <a href="https://github.com/matterport/Mask_RCNN">Mask RCNN</a> project.
