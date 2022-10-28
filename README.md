@@ -3,3 +3,14 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 
 ## Network Architecture
 ![MTL-architecture](https://user-images.githubusercontent.com/90736946/198709157-abf0d92a-1b28-4459-a099-7e4ccd5b9006.png)
+
+## Getting Started
+
+
+
+
+
+
+
+
+## Citation
