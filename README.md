@@ -5,7 +5,7 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 ![MTL-architecture](https://user-images.githubusercontent.com/90736946/198709157-abf0d92a-1b28-4459-a099-7e4ccd5b9006.png)
 
 ## Getting Started
-* Install the required dependencies: (for reference see [how_to_install.pdf](https://github.com/monjurulkarim/Tracking_manufacturing/blob/master/how_to_install.pdf) )
+* Install the required dependencies.
 * [Dataset](https://drive.google.com/drive/folders/1vTNgPi2SSefO9fzxHxCa2Sgmec_B8MkM?usp=sharing): Download the initial dataset from here.
 * [Coco_weight](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights from here.
 * [weights](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights and trained weights for bridge element segmentation from here.
