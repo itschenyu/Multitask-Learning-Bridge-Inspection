@@ -5,7 +5,7 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 ![MTL-architecture](https://user-images.githubusercontent.com/90736946/198709157-abf0d92a-1b28-4459-a099-7e4ccd5b9006.png)
 
 ## Getting Started
-* Install the required dependencies.
+* Install the required dependencies in `requirements.txt`.
 * Dataset: Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link), and then unzip it place in `./VOCdevkit/VOC2007/`.
 * Pre-trained weights: Please download pre-trained weights on VOC12+SBD from [here](https://github.com/bubbliiiing/hrnet-pytorch/releases/download/v1.0/hrnetv2_w32_weights_voc.pth), and then place it in `./model_data/`.
 *  train_multi.py: this code is used for loading data and training the model.
