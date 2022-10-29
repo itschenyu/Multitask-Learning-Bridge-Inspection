@@ -1,1 +1,1 @@
-This folder is used to store pre-trained weights.
+This folder is used to place pre-trained weights.
