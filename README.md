@@ -8,10 +8,8 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 * Install the required dependencies.
 * Dataset: Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link), and then unzip it place in `./VOCdevkit/VOC2007/`.
 * Pre-trained weights: Please download pre-trained weights on VOC12+SBD from [here](https://github.com/bubbliiiing/hrnet-pytorch/releases/download/v1.0/hrnetv2_w32_weights_voc.pth), and then place it in `./model_data/`.
-*  [custom.py](https://github.com/monjurulkarim/active_learning/blob/main/custom.py) : this code is used for loading data and training the model
-*  [Training.ipynb](https://github.com/monjurulkarim/active_learning/blob/main/Training.ipynb): loading the weight and calling the training function
-*  [inference.ipynb](https://github.com/monjurulkarim/active_learning/blob/main/inference.ipynb): this code is used for inferencing. 
-*  [mrcnn/visualize.py](https://github.com/monjurulkarim/active_learning/blob/main/mrcnn/visualize.py) : this code is used for visualizing the segmented bridge elements with mask.
+*  train_multi.py: this code is used for loading data and training the model.
+*  predict_multi.py: this code is used for inferencing. 
 
 ## Citation
 If this work is helpful to you, please cite it as:
