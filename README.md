@@ -6,7 +6,7 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 
 ## Getting Started
 * Install the required dependencies.
-* [Dataset](https://drive.google.com/drive/folders/1vTNgPi2SSefO9fzxHxCa2Sgmec_B8MkM?usp=sharing): Download the initial dataset from here.
+* [Dataset](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=sharing): Download the initial dataset from here.
 * [Coco_weight](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights from here.
 * [weights](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights and trained weights for bridge element segmentation from here.
 *  [custom.py](https://github.com/monjurulkarim/active_learning/blob/main/custom.py) : this code is used for loading data and training the model
