@@ -7,8 +7,7 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 ## Getting Started
 * Install the required dependencies.
 * Dataset: Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link), and then unzip it place in `./VOCdevkit/VOC2007/`.
-* [Coco_weight](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights from here.
-* [weights](https://drive.google.com/drive/folders/1wYTNf4nf_79OgqTSOcVc39XVr6s4d9Z-?usp=sharing): Download pre-trained resnet_50 coco weights and trained weights for bridge element segmentation from here.
+* Pre-trained_weight: Please download pre-trained weights from [here](https://github.com/bubbliiiing/hrnet-pytorch/releases/download/v1.0/hrnetv2_w32_weights_voc.pth).
 *  [custom.py](https://github.com/monjurulkarim/active_learning/blob/main/custom.py) : this code is used for loading data and training the model
 *  [Training.ipynb](https://github.com/monjurulkarim/active_learning/blob/main/Training.ipynb): loading the weight and calling the training function
 *  [inference.ipynb](https://github.com/monjurulkarim/active_learning/blob/main/inference.ipynb): this code is used for inferencing. 
