@@ -23,4 +23,4 @@ If this work is helpful to you, please cite it as:
   year = {2022},
 }
 ~~~~
-Note that part of the codes are referred from <a href="https://github.com/bubbliiiing/hrnet-pytorch">HRnet-pytorch</a> project.
+Note that part of the codes are referred from <a href="https://github.com/bubbliiiing/hrnet-pytorch">HRNet-pytorch</a> project.
