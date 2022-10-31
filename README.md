@@ -8,9 +8,10 @@ This is the implementation of the paper ["A Multitask Deep Learning Model for Pa
 ### Installation
 * Install the required dependencies in `requirements.txt`.
 * Clone this repo:
-`git clone https://github.com/itschenyu/Multitask-Learning-Bridge-Inspection.git
-cd Multitask-Learning-Bridge-Inspection`
-
+~~~~
+git clone https://github.com/itschenyu/Multitask-Learning-Bridge-Inspection.git
+cd Multitask-Learning-Bridge-Inspection
+~~~~
 ### Dataset
 * Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link), and then unzip it place in `./VOCdevkit/VOC2007/`.
 
