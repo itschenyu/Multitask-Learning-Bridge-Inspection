@@ -17,6 +17,8 @@ cd Multitask-Learning-Bridge-Inspection
 
 ### Pre-trained weights
 * Please download pre-trained weights on VOC12+SBD from [here](https://github.com/bubbliiiing/hrnet-pytorch/releases/download/v1.0/hrnetv2_w32_weights_voc.pth), and then place it in `./model_data/`.
+
+### Train the Model
 *  train_multi.py: this code is used for loading data and training the model.
 *  predict_multi.py: this code is used for inferencing. 
 
