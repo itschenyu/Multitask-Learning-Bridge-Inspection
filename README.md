@@ -35,6 +35,7 @@ python get_miou.py
 ~~~~
 
 ### Inference
+Place the inference images in `./img/`, and then run:
 ~~~~
 python predict.py
 ~~~~
