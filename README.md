@@ -23,6 +23,11 @@ Train MTL-D:
 ~~~~
 python train_MTL-D.py
 ~~~~
+Train MTL-I:
+~~~~
+python train_MTL-I.py
+~~~~
+
 ### Testing
 *  predict_multi.py: this code is used for inferencing. 
 
