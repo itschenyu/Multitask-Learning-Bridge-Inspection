@@ -54,4 +54,5 @@ If this work is helpful to you, please cite it as:
 ~~~~
 ## Note
 Part of the codes are referred from <a href="https://github.com/bubbliiiing/hrnet-pytorch">HRNet-pytorch</a> project.
+
 The images and corrosion annotations in the dataset are credited to [Corrosion Condition State Semantic Segmentation Dataset](https://data.lib.vt.edu/articles/dataset/Corrosion_Condition_State_Semantic_Segmentation_Dataset/16624663/2).
