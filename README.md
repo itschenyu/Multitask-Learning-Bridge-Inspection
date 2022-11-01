@@ -29,10 +29,15 @@ python train_MTL-I.py
 ~~~~
 
 ### Testing
-*  predict_multi.py: this code is used for inferencing. 
+Evaluating the model on the validation dataset:
+~~~~
+python get_miou.py
+~~~~
 
 ### Inference
-*  predict_multi.py: this code is used for inferencing. 
+~~~~
+python predict.py
+~~~~
 
 ## Citation
 If this work is helpful to you, please cite it as:
