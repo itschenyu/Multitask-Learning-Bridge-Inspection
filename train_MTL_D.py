@@ -367,6 +367,8 @@ if __name__ == "__main__":
                             _f_score_e = f_score(outputs[0], labels_e)
                             _f_score_d = f_score(outputs[1], labels_d)
 
+                            val_loss += loss_e.item()
+                            val_loss += loss_d.item()
                             val_loss_e  += loss_e.item()
                             val_loss_d  += loss_d.item()
                             val_f_score += _f_score_e.item()
