@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     if miou_mode == 0 or miou_mode == 2:
         print("Get miou.")
-        hist_e, IoUs_e, PA_Recall_e, Precision_e, hist_d, IoUs_d, PA_Recall_d, Precision_d = compute_mIoU(gt_dir_e, pred_dir_e, gt_dir_d, pred_dir_d, image_ids, num_classes, name_classes)  # 执行计算mIoU的函数
+        hist_e, IoUs_e, PA_Recall_e, Precision_e, hist_d, IoUs_d, PA_Recall_d, Precision_d = compute_mIoU(gt_dir_e, pred_dir_e, gt_dir_d, pred_dir_d, image_ids, num_classes, name_classes)
         print("Get miou done.")
         show_results(miou_out_path_e, hist_e, IoUs_e, PA_Recall_e, Precision_e, name_classes[0])
         show_results(miou_out_path_d, hist_d, IoUs_d, PA_Recall_d, Precision_d, name_classes[1])
