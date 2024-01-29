@@ -13,7 +13,7 @@ git clone https://github.com/itschenyu/Multitask-Learning-Bridge-Inspection.git
 cd Multitask-Learning-Bridge-Inspection
 ~~~~
 ### Dataset
-* Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link), and then unzip it place in `./VOCdevkit/VOC2007/`.
+* Please download the initial dataset from [here](https://drive.google.com/drive/folders/1HLCUC8R9x3t-qB_t3NQ1XujMV43Axmv_?usp=share_link) and place it in `./VOCdevkit/VOC2007/`.
 
 ### Pre-trained weights
 * Please download pre-trained weights on VOC12+SBD from [here](https://github.com/bubbliiiing/hrnet-pytorch/releases/download/v1.0/hrnetv2_w32_weights_voc.pth), and then place it in `./model_data/`.
