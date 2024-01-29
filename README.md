@@ -49,7 +49,7 @@ If this work is helpful to you, please cite it as:
   doi = {10.48550/ARXIV.2209.02190},
   url = {https://arxiv.org/abs/2209.02190},
   publisher = {arXiv}, 
-  year = {2022},
+  year = {2022}
 }
 ~~~~
 ## Note
