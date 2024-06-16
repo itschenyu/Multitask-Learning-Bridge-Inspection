@@ -29,15 +29,22 @@ python train_MTL-I.py
 ~~~~
 
 ### Testing
-Evaluating the model on the validation dataset:
+Evaluating the MTL-D model on the validation dataset:
 ~~~~
-python get_miou.py
+python get_miou_MTL-D.py
+~~~~
+or evaluating MTL-I:
+~~~~
+python get_miou_MTL-I.py
 ~~~~
 
 ### Inference
 Place the inference images in `./img/`, and then run:
 ~~~~
-python predict.py
+python predict_MTL-D.py
+~~~~
+~~~~
+python predict_MTL-I.py
 ~~~~
 
 ## Citation
