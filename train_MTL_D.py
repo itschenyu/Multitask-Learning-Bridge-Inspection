@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader
 from nets.hrnet_MTL_D import HRnet
 from nets.hrnet_training import (get_lr_scheduler, set_optimizer_lr,
                                  weights_init)
-from utils.callbacks_multi import LossHistory, EvalCallback
+from utils.callbacks_multi_D import LossHistory, EvalCallback
 from utils.dataloader_multi import SegmentationDataset, seg_dataset_collate
 from utils.utils import download_weights, show_config
 from utils.utils_fit_multi import fit_one_epoch
@@ -172,6 +172,12 @@ if __name__ == "__main__":
         if epoch_step == 0 or epoch_step_val == 0:
             raise ValueError("The dataset is too small to continue training. Please expand the dataset.")
         
+        #----------------------#
+        #   cross data
+        #----------------------#
+        cross_e = torch.ones(8, 7, 120, 120)
+        cross_d = torch.ones(8, 2, 120, 120)
+
         train_dataset   = SegmentationDataset(train_lines, input_shape, num_classes, True, VOCdevkit_path)
         val_dataset     = SegmentationDataset(val_lines, input_shape, num_classes, False, VOCdevkit_path)
     
@@ -264,7 +270,7 @@ if __name__ == "__main__":
 
                         optimizer.zero_grad()
                         if not fp16:
-                            outputs = model_train(imgs)
+                            outputs = model_train(imgs, cross_e, cross_d)
                             if focal_loss:
                                 loss_e = Focal_Loss(outputs[0], pngs_e, weights_1, num_classes = num_classes[0])
                                 loss_d = Focal_Loss(outputs[1], pngs_d, weights_2, num_classes = num_classes[1])
@@ -289,7 +295,7 @@ if __name__ == "__main__":
                         else:
                             from torch.cuda.amp import autocast
                             with autocast():
-                                outputs = model_train(imgs)
+                                outputs = model_train(imgs, cross_e, cross_d)
                                 if focal_loss:
                                     loss_e = Focal_Loss(outputs[0], pngs_e, weights_1, num_classes = num_classes[0])
                                     loss_d = Focal_Loss(outputs[1], pngs_d, weights_2, num_classes = num_classes[1])
@@ -351,7 +357,7 @@ if __name__ == "__main__":
                                 weights_1 = weights_1.cuda(local_rank)
                                 weights_2 = weights_2.cuda(local_rank) 
 
-                            outputs     = model_train(imgs)
+                            outputs = model_train(imgs, cross_e, cross_d)
                             if focal_loss:
                                 loss_e = Focal_Loss(outputs[0], pngs_e, weights_1, num_classes = num_classes[0])
                                 loss_d = Focal_Loss(outputs[1], pngs_d, weights_2, num_classes = num_classes[1])
@@ -379,24 +385,33 @@ if __name__ == "__main__":
                                                 'f_score'   : val_f_score / (iteration + 1),
                                                 'lr'        : get_lr(optimizer)})
                             pbar.update(1)
-                            
+
+                    cross_e = outputs[2]
+                    cross_d = outputs[3]
+                           
                     if local_rank == 0:
                         pbar.close()
                         print('Finish Validation')
                         loss_history.append_loss(epoch + 1, total_loss / epoch_step, total_loss_e / epoch_step, total_loss_d / epoch_step, val_loss / epoch_step_val, val_loss_e / epoch_step_val, val_loss_d / epoch_step_val)
-                        eval_callback.on_epoch_end(epoch + 1, model_train)
+                        eval_callback.on_epoch_end(epoch + 1, model_train, cross_e, cross_d)
                         print('Epoch:'+ str(epoch + 1) + '/' + str(UnFreeze_Epoch))
                         print('Total Loss: %.3f || Val Loss: %.3f ' % (total_loss / epoch_step, val_loss / epoch_step_val))
                         print('Element Loss: %.3f || Element Val Loss: %.3f || Defect Loss: %.3f || Defect Val Loss: %.3f ' % (total_loss_e / epoch_step, val_loss_e / epoch_step_val, total_loss_d / epoch_step, val_loss_d / epoch_step_val))
                         
                         if (epoch + 1) % save_period == 0 or epoch + 1 == UnFreeze_Epoch:
                             torch.save(model.state_dict(), os.path.join(save_dir, 'ep%03d-loss%.3f-val_loss%.3f.pth'%((epoch + 1), total_loss / epoch_step, val_loss / epoch_step_val)))
-
+                            torch.save(cross_e, os.path.join(save_dir, 'cross_e-ep%03d.pth' % ((epoch + 1))))
+                            torch.save(cross_d, os.path.join(save_dir, 'cross_d-ep%03d.pth' % ((epoch + 1))))
+                            
                         if len(loss_history.val_loss) <= 1 or (val_loss / epoch_step_val) <= min(loss_history.val_loss):
                             print('Save best model to best_epoch_weights.pth')
                             torch.save(model.state_dict(), os.path.join(save_dir, "best_epoch_weights.pth"))
+                            torch.save(cross_e, os.path.join(save_dir, "cross_e-best_epoch_weights.pth"))
+                            torch.save(cross_d, os.path.join(save_dir, "cross_d-best_epoch_weights.pth"))
                             
                         torch.save(model.state_dict(), os.path.join(save_dir, "last_epoch_weights.pth"))
+                        torch.save(cross_e, os.path.join(save_dir, "cross_e-last_epoch_weights.pth"))
+                        torch.save(cross_d, os.path.join(save_dir, "cross_d-last_epoch_weights.pth"))
 
             if distributed:
                 dist.barrier()
